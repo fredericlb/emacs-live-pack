@@ -23,6 +23,7 @@
 (el-get-bundle projectile)
 (el-get-bundle helm)
 (el-get-bundle helm-projectile)
+(el-get-bundle editorconfig)
 (el-get 'sync)
 
 (require 'spaceline)
@@ -53,3 +54,6 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (linum-mode)
 (setq linum-format "%4d  ")
+
+(require 'editorconfig)
+(editorconfig-mode 1)
