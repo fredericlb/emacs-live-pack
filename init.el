@@ -16,6 +16,7 @@
     (eval-print-last-sexp)))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+
 (el-get-bundle dash)
 (el-get-bundle s)
 (el-get-bundle spaceline)
@@ -24,14 +25,17 @@
 (el-get-bundle helm)
 (el-get-bundle helm-projectile)
 (el-get-bundle editorconfig)
+(el-get-bundle ergoemacs-mode)
+(el-get-bundle elm-mode)
 (el-get 'sync)
 
 (require 'spaceline)
 (require 'spaceline-config)
-(require 'nyan-mode)
+;(require 'nyan-mode)
 (spaceline-emacs-theme)
 
-(nyan-mode t)
+
+                                        ;(nyan-mode t)
 (setq spaceline-minor-modes-separator " ")
 (diminish 'auto-complete-mode "⊕")
 (diminish 'paredit-mode "(p)")
@@ -51,9 +55,24 @@
 
 (require 'helm-config)
 
-(global-set-key (kbd "M-x") 'helm-M-x)
+
 (linum-mode)
 (setq linum-format "%4d  ")
 
 (require 'editorconfig)
 (editorconfig-mode 1)
+
+(setq ergoemacs-theme nil)
+(setq ergoemacs-keyboard-layout "fr")
+(require 'ergoemacs-mode)
+(ergoemacs-mode 1)
+(define-key key-translation-map (kbd "<f13>") (kbd "<menu>"))
+
+(setq ergoemacs-handle-ctl-c-or-ctl-x 'only-copy-cut)
+
+;(ergoemacs-key "Menu-RET" 'execute-extended-command "Execute")
+
+(global-set-key (kbd "M-SPC") 'helm-M-x)
+(global-set-key (kbd "C-SPC") 'set-mark-command)
+(setq-default cursor-type 'bar)
+(blink-cursor-mode)

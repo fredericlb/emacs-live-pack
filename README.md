@@ -1,4 +1,6 @@
-## User Pack Template
+# Personal Emacs live Pack
+
+## TEMPLATE README
 
 This is a template for your own user (or other purpose) pack.
 
