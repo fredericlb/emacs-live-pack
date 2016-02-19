@@ -1,0 +1,3 @@
+[submodule "Emacs_Client_For_OSX"]
+	path = Emacs_Client_For_OSX
+	url = https://github.com/NicholasKirchner/Emacs_Client_For_OSX
